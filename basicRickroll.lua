@@ -1,9 +1,18 @@
-local songNotes = {"A","B","D","B","F#","F#","E",
-                   "A","B","D","B","E","E","D","C#","B",
-                   "A","B","D","B","D","E","C#","A","A","E","D",
-                   "A","B","D","B","F#","F#","E",
-                   "A","B","D","B","A","C#","D","C#","B",
-                   "A","B","D","B","D","E","C#","A","A","E","D"}
-for i,v in ipairs(songNotes) do
-    note.play(v,2)
+local note = require("note")
+
+function PlayVerse( verseNote)
+    for i,v in ipairs(verseNote) do
+        note.play(v,0.3)
+    end
+end
+
+local verseNotes = {{"A3","B3","D4","B3","F#4","F#4","E4"},
+                   {"A3","B3","D4","B3","E4","E4","D4","C#4","B3"},
+                   {"A3","B3","D4","B3","D4","E4","C#4","A3","A3","E4","D4"},
+                   {"A3","B3","D4","B3","F#4","F#4","E4"},
+                   {"A3","B3","D4","B3","A4","C#4","D4","C#4","B3"},
+                   {"A3","B3","D4","B3","D4","E4","C#4","A3","A3","E4","D4"}}
+for i,v in ipairs(verseNotes) do
+    PlayVerse(v)
+    os.sleep(1)
 end
